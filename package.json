@@ -1,7 +1,7 @@
 {
-  "name": "swipi",
+  "name": "swipi-cards",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Tinder like card swipe web component",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/swipi-card/swipi.js",
+  "unpkg": "dist/swipi-cards/swipi.js",
   "files": [
     "dist/",
     "loader/"

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 import { SwipiCard } from '../swipi-card/swipi-card';
 
 @Component({
@@ -25,7 +25,7 @@ export class SwipiCards {
   render() {
     return (
       <Host>
-        {this.cardStack.map((x, i) => {
+        {this.cardStack.map((_, i) => {
           const cardstackstyle = {
               top: .4 * (i-this.currentCard) + 'em',
               transitionDelay: 50 * (i-this.currentCard) + 'ms',
