@@ -1,0 +1,27 @@
+:host {
+  border-radius: 20px;
+  border: 3px dashed transparent;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  color: #5E6680;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba($color: #000000, $alpha: .1);
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  border-bottom: 4px solid transparent;
+  cursor: grab;
+}
+
+
+.event-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

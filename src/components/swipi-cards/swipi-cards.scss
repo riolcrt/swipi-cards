@@ -1,0 +1,28 @@
+:host {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+rg-swipi-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+
+  &:first-child {
+    border-bottom: solid .2em #AEAEAE;
+  }
+}
+
+.stack {
+  background-color: red;
+  width: 100%;
+  height: 20px;
+  display: block;
+}

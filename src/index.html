@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/swipi.esm.js"></script>
-  <script nomodule src="/build/swipi.js"></script>
+  <script type="module" src="/build/swipi-cards.esm.js"></script>
+  <script nomodule src="/build/swipi-cards.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:100,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
-<body>
+<style>
+  * {box-sizing: border-box;}
+</style>
+<body style="background-color: #424250; overflow: hidden; width: 100vw; height: 100vh;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <h1 style="font-family: Nunito; color: white; width: 100%; text-align: center;">Swipi Card Stack!</h1>
+  <rg-swipi-cards cardOverlap="20" style="width: 260px; height: 500px;"></rg-swipi-cards>
+  <script>
+    var component = document.querySelector('rg-swipi-cards')   
+    var swipiCards = [{},{}]
+    var cardOverlap = 25.8
 
-</body>
+    component.cardStack = swipiCards;
+    component.cardOverlap = cardOverlap;
+  </script>
+  
+</body> 
 </html>
