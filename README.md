@@ -2,7 +2,7 @@
 # SWIPI CARDS
 
 Simple Tinder Like web component made with stencil. It fire an event when a swipe is completed. Swipe completion is driven by velocity.
-
+[https://riolcrt.github.io/swipi-cards/demo/] Demo
 ## Getting Started
 
 To start development server
