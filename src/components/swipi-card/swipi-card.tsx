@@ -36,17 +36,13 @@ export class SwipiCard {
 
   componentDidLoad() {
     this.hammertime = new Hammer(this.eventOverlayElement)
-    this.hammertime.on('pan', e => {
-      const xMulti = e.deltaX * 0.03;
-      const yMulti = e.deltaY / 80;
-      
-      
+    this.hammertime.on('pan', e => {      
       this.cardState = {...this.cardState, 
         offsetX: e.deltaX, 
         velocityX: e.velocityX,
         offsetY: e.deltaY, 
         velocityY: e.velocityY,
-        rotation: xMulti * yMulti,
+        rotation: e.deltaX * 0.03 * e.deltaY / 80,
         isMoving: true,
         isSwiped: false
       }
@@ -89,7 +85,7 @@ export class SwipiCard {
       <Host style={{
         pointerEvents: this.cardState.isSwiped ? 'none': 'all',
         borderColor: this.cardState.isMoving ? 'rgba(255,255,255,.6)': 'transparent',
-        backgroundColor: this.cardState.isMoving ? 'rgba(0,0,0,.9)': 'transparent'
+        
         }} >
         <div class='card'
         style={{
