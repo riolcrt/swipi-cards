@@ -27,7 +27,8 @@ export class SwipiCards {
       <Host>
         {this.cardStack.map((x, i) => {
           const cardstackstyle = {
-              top: .4 * (i-this.currentCard) + 'em', 
+              top: .4 * (i-this.currentCard) + 'em',
+              transitionDelay: 50 * (i-this.currentCard) + 'ms',
               zIndex:( this.cardStack.length - i).toString(),
               opacity: (1 - (i - this.currentCard)/6).toString()
             
