@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Element, State } from '@stencil/core';
+import 'hammerjs';
 
 @Component({
   tag: 'rg-swipi-card',
