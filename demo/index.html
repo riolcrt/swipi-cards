@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script src='https://unpkg.com/swipi-cards@0.0.1/dist/swipi-cards.js'></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:100,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<style>
+  * {box-sizing: border-box;}
+  body {
+    background-color: #424250; overflow: hidden; width: 100vw; height: 100vh;  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  }
+  button {
+    color: white;
+    border: none;
+    font-size: .8em;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    border-radius: 40px; 
+    padding: 2em 4em;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(to left, #0F2027, #203A43, #2C5364 );}
+    h1{
+      font-family: Nunito; color: white; width: 100%; text-align: center;
+    }
+</style>
+<body>
+  <h1>Swipi Card Stack!</h1>
+  <rg-swipi-cards cardOverlap="20" style="width: 260px; height: 500px;"></rg-swipi-cards>
+  <button onclick="addCart()">Add Card</button>
+  
+  <script>
+    var component = document.querySelector('rg-swipi-cards')   
+    var swipiCards = [{},{}]
+    var cardOverlap = 25.8
+
+    component.cardStack = swipiCards;
+    component.cardOverlap = cardOverlap;
+
+    addCart = () => component.cardStack = [...component.cardStack, {}]
+    
+  </script>
+  
+</body> 
+</html>
