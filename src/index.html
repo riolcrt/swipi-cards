@@ -39,81 +39,62 @@
 </style>
 <body>
   <h1>Swipi Card Stack!</h1>
-  <rg-swipi-cards>
+  <rg-swipi-cards (onSwipeRight)="() => console.log('right')">
     <rg-swipi-card 
       leftColor="#BB377D"
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
     <rg-swipi-card 
-      onswipeleft="printProps()"
       leftColor="#BB377D" 
       rightColor="#C9FFBF">
       <h2>Hello Card</h2>
     </rg-swipi-card>
-  </rg-swipi-cards>
-  <button onclick="addCart()">Add Card</button>
-  
-  <script>
-    var component = document.querySelector('rg-swipi-cards')   
-    var card = document.querySelector('rg-swipi-card')
-    addCart = () => component.appendChild()
-
-  </script>
-  
+  </rg-swipi-cards>  
 </body> 
 </html>

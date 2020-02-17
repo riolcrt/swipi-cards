@@ -1,4 +1,4 @@
-import { Component, h, State, Element } from '@stencil/core';
+import { Component, h, State, Element, EventEmitter, Event } from '@stencil/core';
 
 @Component({
   tag: 'rg-swipi-cards',
@@ -10,19 +10,27 @@ export class SwipiCards {
   @State() currentCard: number
   @State() children: any;
 
+  @Event() swipeLeft: EventEmitter<any>;
+  @Event() swipeRight: EventEmitter<any>;
+
   componentWillLoad() {
     this.currentCard = 0;
     this.children = this.el.querySelectorAll('rg-swipi-card');  
     this.children.forEach(x => { 
-      x.addEventListener('swipeleft', () => this.loadNext())
-      x.addEventListener('swiperight', () => this.loadNext())
+      x.addEventListener('swipeleft', (x) => this.onChildrenSwipeLeft(x.target))
+      x.addEventListener('swiperight', (x) => this.onChildrenSwipeRight(x.target))
     })
   }
 
-
-  loadNext() {
+  onChildrenSwipeLeft(card) {
+    console.log(card)
+    this.swipeLeft.emit(card)
     this.currentCard += 1;
-    console.log('next card')
+  }
+
+  onChildrenSwipeRight(card) {
+    this.swipeRight.emit(card)
+    this.currentCard += 1;
   }
 
   render() {

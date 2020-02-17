@@ -44,7 +44,10 @@ declare namespace LocalJSX {
     'onSwiperight'?: (event: CustomEvent<any>) => void;
     'rightcolor'?: string;
   }
-  interface RgSwipiCards {}
+  interface RgSwipiCards {
+    'onSwipeLeft'?: (event: CustomEvent<any>) => void;
+    'onSwipeRight'?: (event: CustomEvent<any>) => void;
+  }
 
   interface IntrinsicElements {
     'rg-swipi-card': RgSwipiCard;
