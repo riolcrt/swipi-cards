@@ -7,18 +7,14 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import {
-  SwipiCard,
-} from './components/swipi-card/swipi-card';
+
 
 export namespace Components {
   interface RgSwipiCard {
-    'leftColor': string;
-    'rightColor': string;
+    'leftcolor': string;
+    'rightcolor': string;
   }
-  interface RgSwipiCards {
-    'cardStack': SwipiCard[];
-  }
+  interface RgSwipiCards {}
 }
 
 declare global {
@@ -43,14 +39,12 @@ declare global {
 
 declare namespace LocalJSX {
   interface RgSwipiCard {
-    'leftColor'?: string;
+    'leftcolor'?: string;
     'onSwipeleft'?: (event: CustomEvent<any>) => void;
     'onSwiperight'?: (event: CustomEvent<any>) => void;
-    'rightColor'?: string;
+    'rightcolor'?: string;
   }
-  interface RgSwipiCards {
-    'cardStack'?: SwipiCard[];
-  }
+  interface RgSwipiCards {}
 
   interface IntrinsicElements {
     'rg-swipi-card': RgSwipiCard;

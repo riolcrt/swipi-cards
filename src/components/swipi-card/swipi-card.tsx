@@ -11,8 +11,8 @@ export class SwipiCard {
   @Event() swiperight: EventEmitter;
   @Event() swipeleft: EventEmitter;
 
-  @Prop() rightColor: string;
-  @Prop() leftColor: string;
+  @Prop() rightcolor: string;
+  @Prop() leftcolor: string;
 
 
   eventOverlayElement: HTMLDivElement;
@@ -92,10 +92,10 @@ export class SwipiCard {
         transform: `translate(${this.cardState.offsetX}px, ${this.cardState.offsetY}px) rotate(${this.cardState.rotation}deg)`,
         cursor: this.cardState.isMoving? 'grabbing': 'grab',
         transition: this.cardState.isMoving? 'all 0s linear': 'all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.5s ease-out, top 0.5s ease-in-out',
-        borderBottomColor: this.cardState.isMoving? this.cardState.offsetX < 0 ? this.leftColor: this.rightColor: 'transparent'
+        borderBottomColor: this.cardState.isMoving? this.cardState.offsetX < 0 ? this.leftcolor: this.rightcolor: 'transparent'
         }}>
-        <div ref={(el) => this.eventOverlayElement = el as HTMLDivElement} class="event-overlay"></div>
-        <slot />
+          <div ref={(el) => this.eventOverlayElement = el as HTMLDivElement} class="event-overlay"></div>
+          <slot />
         </div>
       </Host>
     );

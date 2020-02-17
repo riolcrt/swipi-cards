@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, State } from '@stencil/core';
-import { SwipiCard } from '../swipi-card/swipi-card';
+import { Component, h, State, Element } from '@stencil/core';
 
 @Component({
   tag: 'rg-swipi-cards',
@@ -7,47 +6,38 @@ import { SwipiCard } from '../swipi-card/swipi-card';
   shadow: true
 })
 export class SwipiCards {
-
-  @Prop() cardStack: SwipiCard[]
-
+  @Element() el:HTMLElement
   @State() currentCard: number
+  @State() children: any;
 
   componentWillLoad() {
     this.currentCard = 0;
-    console.log(this.cardStack);
+    this.children = this.el.querySelectorAll('rg-swipi-card');  
+    this.children.forEach(x => { 
+      x.addEventListener('swipeleft', () => this.loadNext())
+      x.addEventListener('swiperight', () => this.loadNext())
+    })
   }
+
 
   loadNext() {
     this.currentCard += 1;
+    console.log('next card')
   }
 
-
   render() {
+    this.children.forEach((x, i) => {
+      x.style.top = .4 * (i-this.currentCard) + 'em',
+      x.style.position = 'absolute'
+      x.style.borderBottom = '2px solid transparent'
+      x.style.transitionDelay = 50 * (i-this.currentCard) + 'ms'
+      x.style.zIndex = ( this.children.length - i).toString()
+      x.style.opacity = (1 - (i - this.currentCard)/6).toString()
+      x.style.transition = 'all 0.5s ease-in-out';
+    });
+    
     return (
-      <Host>
-        {this.cardStack.map((_, i) => {
-          const cardstackstyle = {
-              top: .4 * (i-this.currentCard) + 'em',
-              transitionDelay: 50 * (i-this.currentCard) + 'ms',
-              zIndex:( this.cardStack.length - i).toString(),
-              opacity: (1 - (i - this.currentCard)/6).toString()
-            
-          } 
-          return (
-            <rg-swipi-card 
-              onSwipeleft={() => this.loadNext()}
-              onSwiperight={() => this.loadNext()}
-              leftColor="#BB377D"
-              rightColor="#C9FFBF"
-              style={cardstackstyle}
-              >
-              <h1>I'm a card</h1>
-              <img style={{borderRadius: '20px'}} src={`https://api.adorable.io/avatars/200/Della-Edwards${i}.png`}></img>
-              <h2>And i iike it!</h2>
-            </rg-swipi-card>
-          )}
-          )}
-      </Host>
+      <slot />
     );
   }
 

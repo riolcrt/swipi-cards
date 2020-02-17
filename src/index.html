@@ -27,25 +27,92 @@
     padding: 2em 4em;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
     background: linear-gradient(to left, #0F2027, #203A43, #2C5364 );}
-    h1{
-      font-family: Nunito; color: white; width: 100%; text-align: center;
+    h1 {
+      font-family: Nunito; 
+      color: white; 
+      width: 100%; 
+      text-align: center;
+    }
+    rg-swipi-cards {
+      width: 260px; height: 300px;
     }
 </style>
 <body>
   <h1>Swipi Card Stack!</h1>
-  <rg-swipi-cards cardOverlap="20" style="width: 260px; height: 500px;"></rg-swipi-cards>
+  <rg-swipi-cards>
+    <rg-swipi-card 
+      leftColor="#BB377D"
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+    <rg-swipi-card 
+      onswipeleft="printProps()"
+      leftColor="#BB377D" 
+      rightColor="#C9FFBF">
+      <h2>Hello Card</h2>
+    </rg-swipi-card>
+  </rg-swipi-cards>
   <button onclick="addCart()">Add Card</button>
   
   <script>
     var component = document.querySelector('rg-swipi-cards')   
-    var swipiCards = [{},{}]
-    var cardOverlap = 25.8
+    var card = document.querySelector('rg-swipi-card')
+    addCart = () => component.appendChild()
 
-    component.cardStack = swipiCards;
-    component.cardOverlap = cardOverlap;
-
-    addCart = () => component.cardStack = [...component.cardStack, {}]
-    
   </script>
   
 </body> 
