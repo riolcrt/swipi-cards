@@ -5,25 +5,13 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
+## Events
 
-| Property    | Attribute | Description | Type          | Default     |
-| ----------- | --------- | ----------- | ------------- | ----------- |
-| `cardStack` | --        |             | `SwipiCard[]` | `undefined` |
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `swipeLeft`  |             | `CustomEvent<any>` |
+| `swipeRight` |             | `CustomEvent<any>` |
 
-
-## Dependencies
-
-### Depends on
-
-- [rg-swipi-card](../swipi-card)
-
-### Graph
-```mermaid
-graph TD;
-  rg-swipi-cards --> rg-swipi-card
-  style rg-swipi-cards fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 
