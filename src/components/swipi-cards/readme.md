@@ -5,12 +5,18 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property       | Attribute        | Description | Type     | Default |
+| -------------- | ---------------- | ----------- | -------- | ------- |
+| `stackOffsetY` | `stack-offset-y` |             | `number` | `0.4`   |
+
+
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `swipeLeft`  |             | `CustomEvent<any>` |
-| `swipeRight` |             | `CustomEvent<any>` |
+| Event           | Description | Type                |
+| --------------- | ----------- | ------------------- |
+| `stackfinished` |             | `CustomEvent<void>` |
 
 
 ----------------------------------------------

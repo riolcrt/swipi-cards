@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type     | Default     |
-| ------------ | ------------ | ----------- | -------- | ----------- |
-| `leftcolor`  | `leftcolor`  |             | `string` | `undefined` |
-| `rightcolor` | `rightcolor` |             | `string` | `undefined` |
+| Property     | Attribute     | Description | Type     | Default     |
+| ------------ | ------------- | ----------- | -------- | ----------- |
+| `leftColor`  | `left-color`  |             | `string` | `undefined` |
+| `rightColor` | `right-color` |             | `string` | `undefined` |
 
 
 ## Events
