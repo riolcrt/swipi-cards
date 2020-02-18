@@ -4,48 +4,99 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-
-  <script src='https://unpkg.com/swipi-cards@0.0.1/dist/swipi-cards.js'></script>
-
+  
   <link href="https://fonts.googleapis.com/css?family=Nunito:100,400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  
+  <script src="https://unpkg.com/swipi-cards@0.1.0/dist/swipi-cards/swipi-cards.esm.js" type="module"></script>
+  <script src="https://unpkg.com/swipi-cards@0.1.0/dist/swipi-cards/swipi-cards.js" nomodule=""></script>
 </head>
 <style>
   * {box-sizing: border-box;}
   body {
+    font-family: 'Nunito', sans-serif; 
     background-color: #424250; overflow: hidden; width: 100vw; height: 100vh;  display: flex; align-items: center; justify-content: center; flex-direction: column;
   }
-  button {
-    color: white;
-    border: none;
-    font-size: .8em;
-    letter-spacing: .4em;
-    text-transform: uppercase;
-    border-radius: 40px; 
-    padding: 2em 4em;
-    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
-    background: linear-gradient(to left, #0F2027, #203A43, #2C5364 );}
-    h1{
-      font-family: Nunito; color: white; width: 100%; text-align: center;
-    }
+
+  h1 {
+    color: white; 
+    width: 100%; 
+    text-align: center;
+  }
+
+  h3 {
+    color: indianred;
+    padding: 1em 2em;
+    border-radius: 40px;
+    border: 2px solid indianred;
+  }
+  
+  rg-swipi-cards {
+    width: 350px!important;
+    height: 400px!important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  rg-swipi-card {
+    width: 100%;
+  }
+
+  rg-swipi-card h2 {
+    line-height: 1em;
+    margin: 0;
+    font-size: 1em;
+  }
+
+  rg-swipi-card img {
+    border-radius: 20px;
+    margin: 1em 0;
+  }
+
+  rg-swipi-card p {
+    margin: 0;
+  }
+
+  rg-swipi-card.customized h2 {
+    color: #de7878;
+  }
+
 </style>
 <body>
   <h1>Swipi Card Stack!</h1>
-  <rg-swipi-cards cardOverlap="20" style="width: 260px; height: 500px;"></rg-swipi-cards>
-  <button onclick="addCart()">Add Card</button>
-  
-  <script>
-    var component = document.querySelector('rg-swipi-cards')   
-    var swipiCards = [{},{}]
-    var cardOverlap = 25.8
-
-    component.cardStack = swipiCards;
-    component.cardOverlap = cardOverlap;
-
-    addCart = () => component.cardStack = [...component.cardStack, {}]
+  <rg-swipi-cards stack-offset-y="0.3">
+    <rg-swipi-card left-color="#BB377D" right-color="#C9FFBF">
+      <h2>Hello i'm a card</h2>
+      <img src="https://api.adorable.io/avatars/280/imacard.png"/>
+      <p>You can swipe me right or left</p>
+    </rg-swipi-card>
+    <rg-swipi-card left-color="red" right-color="green">
+      <h2>Hello i'm another card</h2>
+      <img src="https://api.adorable.io/avatars/280/imacardtoo.png"/>
+      <p>Notice my swipe colors changed</p>
+    </rg-swipi-card>
+    <rg-swipi-card left-color="blue" right-color="violet" class="customized">
+      <h2>Hello i'm a customized card</h2>
+      <img src="https://api.adorable.io/avatars/280/imacustomizedcard.png"/>
+      <p>I can be whatever you want</p>
+    </rg-swipi-card>
+    <rg-swipi-card left-color="blue" right-color="violet" onswiperight="sayOuch()" class="customEventCard">
+      <h2>Hello i'm a custom event card</h2>
+      <img src="https://api.adorable.io/avatars/280/imacustomeventcard.png"/>
+      <p>I say ouch! when you swipe me right</p>
+    </rg-swipi-card>
+    <h3>Stack Finished</h3>
     
+  </rg-swipi-cards>
+
+  <script>
+    const component = document.querySelector('rg-swipi-cards');
+    component.addEventListener('swiperight', (x) => console.log(x))
+    component.addEventListener('swipeleft', (x) => console.log(x))
+
+    const customEventCard = document.querySelector('.customEventCard')
+    customEventCard.addEventListener('swiperight', (x) => alert('ouch!'))
+
   </script>
-  
 </body> 
 </html>

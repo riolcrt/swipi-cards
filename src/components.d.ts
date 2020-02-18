@@ -11,10 +11,12 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface RgSwipiCard {
-    'leftcolor': string;
-    'rightcolor': string;
+    'leftColor': string;
+    'rightColor': string;
   }
-  interface RgSwipiCards {}
+  interface RgSwipiCards {
+    'stackOffsetY': number;
+  }
 }
 
 declare global {
@@ -39,14 +41,14 @@ declare global {
 
 declare namespace LocalJSX {
   interface RgSwipiCard {
-    'leftcolor'?: string;
+    'leftColor'?: string;
     'onSwipeleft'?: (event: CustomEvent<any>) => void;
     'onSwiperight'?: (event: CustomEvent<any>) => void;
-    'rightcolor'?: string;
+    'rightColor'?: string;
   }
   interface RgSwipiCards {
-    'onSwipeLeft'?: (event: CustomEvent<any>) => void;
-    'onSwipeRight'?: (event: CustomEvent<any>) => void;
+    'onStackfinished'?: (event: CustomEvent<void>) => void;
+    'stackOffsetY'?: number;
   }
 
   interface IntrinsicElements {

@@ -1,4 +1,4 @@
-import { Component, h, State, Element, EventEmitter, Event } from '@stencil/core';
+import { Component, h, State, Element, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'rg-swipi-cards',
@@ -7,35 +7,31 @@ import { Component, h, State, Element, EventEmitter, Event } from '@stencil/core
 })
 export class SwipiCards {
   @Element() el:HTMLElement
+  @Prop() stackOffsetY: number = 0.4;
   @State() currentCard: number
   @State() children: any;
-
-  @Event() swipeLeft: EventEmitter<any>;
-  @Event() swipeRight: EventEmitter<any>;
+  @Event() stackfinished: EventEmitter<void>;
 
   componentWillLoad() {
     this.currentCard = 0;
     this.children = this.el.querySelectorAll('rg-swipi-card');  
     this.children.forEach(x => { 
-      x.addEventListener('swipeleft', (x) => this.onChildrenSwipeLeft(x.target))
-      x.addEventListener('swiperight', (x) => this.onChildrenSwipeRight(x.target))
+      x.addEventListener('swipeleft', () => this.onChildrenSwipe())
+      x.addEventListener('swiperight', () => this.onChildrenSwipe())
     })
   }
 
-  onChildrenSwipeLeft(card) {
-    console.log(card)
-    this.swipeLeft.emit(card)
-    this.currentCard += 1;
+  componentDidLoad() {
+    console.log(this.stackOffsetY)
   }
 
-  onChildrenSwipeRight(card) {
-    this.swipeRight.emit(card)
+  onChildrenSwipe() {
     this.currentCard += 1;
   }
 
   render() {
     this.children.forEach((x, i) => {
-      x.style.top = .4 * (i-this.currentCard) + 'em',
+      x.style.top = this.stackOffsetY * (i-this.currentCard) + 'em',
       x.style.position = 'absolute'
       x.style.borderBottom = '2px solid transparent'
       x.style.transitionDelay = 50 * (i-this.currentCard) + 'ms'
