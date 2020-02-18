@@ -28,7 +28,12 @@ npm test
 ### Script tag
 
 - [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/swipi-cards@0.0.1/dist/swipi-cards.js'></script>` in the head of your index.html
+- Put a script tag similar to this in the head of your index.html
+```
+<script src="https://unpkg.com/swipi-cards@1.0.0/dist/swipi-cards/swipi-cards.esm.js" type="module"></script>
+<script src="https://unpkg.com/swipi-cards@1.0.0/dist/swipi-cards/swipi-cards.js" nomodule=""></script>
+```
+  
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
