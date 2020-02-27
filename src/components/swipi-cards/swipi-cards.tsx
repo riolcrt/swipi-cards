@@ -10,7 +10,8 @@ export class SwipiCards {
   @Prop() stackOffsetY: number = 0.4;
   @State() currentCard: number
   @State() children: any;
-  @Event() stackfinished: EventEmitter<void>;
+  @Event() stackFinish: EventEmitter<void>;
+  @Event() childrenSwipe: EventEmitter<number>;
 
   componentWillLoad() {
     this.currentCard = 0;
@@ -21,12 +22,12 @@ export class SwipiCards {
     })
   }
 
-  componentDidLoad() {
-    console.log(this.stackOffsetY)
-  }
-
   onChildrenSwipe() {
     this.currentCard += 1;
+    this.childrenSwipe.emit(this.children.length - this.currentCard)
+    if (this.currentCard === this.children.length) {
+      this.stackFinish.emit();
+    }
   }
 
   render() {
