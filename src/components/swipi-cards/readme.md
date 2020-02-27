@@ -14,9 +14,10 @@
 
 ## Events
 
-| Event           | Description | Type                |
-| --------------- | ----------- | ------------------- |
-| `stackfinished` |             | `CustomEvent<void>` |
+| Event           | Description | Type                  |
+| --------------- | ----------- | --------------------- |
+| `childrenSwipe` |             | `CustomEvent<number>` |
+| `stackFinish`   |             | `CustomEvent<void>`   |
 
 
 ----------------------------------------------

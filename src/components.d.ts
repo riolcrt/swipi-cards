@@ -47,7 +47,8 @@ declare namespace LocalJSX {
     'rightColor'?: string;
   }
   interface RgSwipiCards {
-    'onStackfinished'?: (event: CustomEvent<void>) => void;
+    'onChildrenSwipe'?: (event: CustomEvent<number>) => void;
+    'onStackFinish'?: (event: CustomEvent<void>) => void;
     'stackOffsetY'?: number;
   }
 
