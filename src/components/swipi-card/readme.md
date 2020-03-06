@@ -15,10 +15,10 @@
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `swipeleft`  |             | `CustomEvent<any>` |
-| `swiperight` |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `scSwipeLeft`  |             | `CustomEvent<any>` |
+| `scSwipeRight` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------
