@@ -17,8 +17,8 @@ export class SwipiCards {
     this.currentCard = 0;
     this.children = this.el.querySelectorAll('rg-swipi-card');  
     this.children.forEach(x => { 
-      x.addEventListener('swipeleft', () => this.onChildrenSwipe())
-      x.addEventListener('swiperight', () => this.onChildrenSwipe())
+      x.addEventListener('scSwipeLeft', () => this.onChildrenSwipe())
+      x.addEventListener('scSwipeRight', () => this.onChildrenSwipe())
     })
   }
 

@@ -8,12 +8,11 @@ import 'hammerjs';
 })
 export class SwipiCard {  
   @Element() el: HTMLElement;  
-  @Event() swiperight: EventEmitter;
-  @Event() swipeleft: EventEmitter;
+  @Event() scSwipeRight: EventEmitter;
+  @Event() scSwipeLeft: EventEmitter;
 
   @Prop() rightColor: string;
   @Prop() leftColor: string;
-
 
   eventOverlayElement: HTMLDivElement;
   hammertime: HammerManager;
@@ -27,8 +26,6 @@ export class SwipiCard {
     isMoving: boolean
     isSwiped: boolean
   };
-
-
 
   componentWillLoad() {
     this.cardState = {...this.cardState, offsetX: 0, offsetY:0, isMoving: false}
@@ -55,17 +52,17 @@ export class SwipiCard {
       let isSwiped = false;
 
       if (ev.velocityX > 1) {
-        this.swiperight.emit()
+        this.scSwipeRight.emit()
         rotation = 30
-        offsetX = document.body.clientWidth
+        offsetX = document.body.clientWidth + 500
         offsetY -100
         isSwiped = true
       }
 
       if (ev.velocityX < -1) {
-        this.swipeleft.emit()
+        this.scSwipeLeft.emit()
         rotation = -30
-        offsetX = -document.body.clientWidth
+        offsetX = - document.body.clientWidth - 500
         offsetY = -100
         isSwiped = true
       }

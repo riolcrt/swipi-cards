@@ -42,8 +42,8 @@ declare global {
 declare namespace LocalJSX {
   interface RgSwipiCard {
     'leftColor'?: string;
-    'onSwipeleft'?: (event: CustomEvent<any>) => void;
-    'onSwiperight'?: (event: CustomEvent<any>) => void;
+    'onScSwipeLeft'?: (event: CustomEvent<any>) => void;
+    'onScSwipeRight'?: (event: CustomEvent<any>) => void;
     'rightColor'?: string;
   }
   interface RgSwipiCards {

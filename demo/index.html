@@ -91,11 +91,11 @@
 
   <script>
     const component = document.querySelector('rg-swipi-cards');
-    component.addEventListener('swiperight', (x) => console.log(x))
-    component.addEventListener('swipeleft', (x) => console.log(x))
+    component.addEventListener('scSwipeRight', (x) => console.log(x))
+    component.addEventListener('scSwipeLeft', (x) => console.log(x))
 
     const customEventCard = document.querySelector('.customEventCard')
-    customEventCard.addEventListener('swiperight', (x) => alert('ouch!'))
+    customEventCard.addEventListener('scSwipeRight', (x) => alert('ouch!'))
 
   </script>
 </body> 
