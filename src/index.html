@@ -62,29 +62,42 @@
     color: #de7878;
   }
 
+  rg-swipi-card .wrapper {
+    background-color: white; 
+    padding: 3em 1em; 
+    text-align: center; 
+    border-radius: 2em; 
+    box-shadow: 0 10px 10px rgba(0,0,0,.4);
+  }
+
 </style>
 <body>
   <h1>Swipi Card Stack!</h1>
   <rg-swipi-cards stack-offset-y="0.3">
     <rg-swipi-card left-color="#BB377D" right-color="#C9FFBF">
-      <h2>Hello i'm a card</h2>
-      <img src="https://api.adorable.io/avatars/280/imacard.png"/>
-      <p>You can swipe me right or left</p>
+      <div class="wrapper">
+        <h2>Hello i'm a card</h2>
+        <img src="https://api.hello-avatar.com/adorables/280/imacard.png" />
+        <p>You can swipe me right or left</p>
+      </div>
     </rg-swipi-card>
-    <rg-swipi-card left-color="red" right-color="green">
-      <h2>Hello i'm another card</h2>
-      <img src="https://api.adorable.io/avatars/280/imacardtoo.png"/>
-      <p>Notice my swipe colors changed</p>
+    <rg-swipi-card left-color="red" right-color="green" >
+      <div class="wrapper"><h2>Hello i'm another card</h2>
+        <img src="https://api.hello-avatar.com/adorables/280/imacardtoo.png"/>
+        <p>Notice my swipe colors changed</p>
+      </div>
     </rg-swipi-card>
     <rg-swipi-card left-color="blue" right-color="violet" class="customized">
-      <h2>Hello i'm a customized card</h2>
-      <img src="https://api.adorable.io/avatars/280/imacustomizedcard.png"/>
-      <p>I can be whatever you want</p>
+      <div class="wrapper"><h2>Hello i'm a customized card</h2>
+        <img src="https://api.hello-avatar.com/adorables/280/imacustomizedcard.png"/>
+        <p>I can be whatever you want</p>
+      </div>
     </rg-swipi-card>
     <rg-swipi-card left-color="blue" right-color="violet" class="customEventCard">
-      <h2>Hello i'm a custom event card</h2>
-      <img src="https://api.adorable.io/avatars/280/imacustomeventcard.png"/>
-      <p>I say ouch! when you swipe me right</p>
+      <div class="wrapper"><h2>Hello i'm a custom event card</h2>
+        <img src="https://api.hello-avatar.com/adorables/280/imacustomeventcard.png"/>
+        <p>I say ouch! when you swipe me right</p>
+      </div>
     </rg-swipi-card>
     <h3>Stack Finished</h3>
     
