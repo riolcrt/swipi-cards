@@ -11,9 +11,6 @@ export class SwipiCard {
   @Event() scSwipeRight: EventEmitter;
   @Event() scSwipeLeft: EventEmitter;
 
-  @Prop() rightColor: string;
-  @Prop() leftColor: string;
-
   eventOverlayElement: HTMLDivElement;
   hammertime: HammerManager;
   
@@ -79,17 +76,17 @@ export class SwipiCard {
 
   render() {
     return (
-      <Host style={{
-        pointerEvents: this.cardState.isSwiped ? 'none': 'all',
-        borderColor: this.cardState.isMoving ? 'rgba(255,255,255,.6)': 'transparent',
-        
-        }} >
+      <Host style={{ pointerEvents: this.cardState.isSwiped ? 'none': 'all' }} 
+        class={{
+          isSwiped: this.cardState.isSwiped,
+          'moving-left': this.cardState.isMoving && this.cardState.offsetX < 0,
+          'moving-right': this.cardState.isMoving && this.cardState.offsetX > 0 }}
+        >
         <div class='card'
         style={{
         transform: `translate(${this.cardState.offsetX}px, ${this.cardState.offsetY}px) rotate(${this.cardState.rotation}deg)`,
         cursor: this.cardState.isMoving? 'grabbing': 'grab',
         transition: this.cardState.isMoving? 'all 0s linear': 'all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.5s ease-out, top 0.5s ease-in-out',
-        borderBottomColor: this.cardState.isMoving? this.cardState.offsetX < 0 ? this.leftColor: this.rightColor: 'transparent'
         }}>
           <div ref={(el) => this.eventOverlayElement = el as HTMLDivElement} class="event-overlay"></div>
           <slot />
